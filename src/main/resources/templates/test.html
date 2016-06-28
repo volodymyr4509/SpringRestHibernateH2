@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Test assignment</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+
+<table>
+    <thead>
+    <tr>
+        <th>id</th>
+        <th>userId</th>
+        <th>title</th>
+        <th>body</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="typ: ${typicodeList}">
+        <td th:text="${typ.id}"></td>
+        <td th:text="${typ.userId}"></td>
+        <td th:text="${typ.title}"></td>
+        <td th:text="${typ.body}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<form action="#" th:action="@{/test}" th:object="${typicode}" method="post">
+    <input type="number" th:field="*{id}"/>
+    <button type="submit">Submit</button>
+</form>
+
+</body>
+</html>
